@@ -3,32 +3,13 @@ app.controller("myController", function($scope, $http) {
 	console.log("Hello form controller");
 
 	var refresh = function() {
-		//????????????????.then, nothing dispalyed    //send request to the server
+		//send request to the server
 		$http.get("/contactList").success(function(response) {
 			console.log("I got the data I requested");
 			$scope.contactList = response;
 			$scope.contact = "";
 		});
 	};
-/******* only used for retrieve data from controller
-	person1 = {
-		name: "leo1",
-		email: "leo1@gmail.com",
-		number: "111 111 1111"
-	};
-	person2 = {
-		name: "leo2",
-		email: "leo2@gmail.com",
-		number: "211 111 1111"
-	};
-	person3 = {
-		name: "leo3",
-		email: "leo3@gmail.com",
-		number: "311 111 1111"
-	};
-	var contactList = [person1, person2, person3];
-	$scope.contactList = contactList;
-******/
 
 	refresh();
 
